@@ -4,6 +4,11 @@ from django.shortcuts import render, redirect
 from apps.forms import RegisterForm
 from apps.models import Blog
 
+def shop_list_page(request):
+    context = {
+        'shop-list'
+    }
+    return  render(request, 'apps/blogs/shop-list.html', context)
 
 def blog_list_page(request):
     context = {
