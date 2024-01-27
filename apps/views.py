@@ -1,58 +1,83 @@
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
-from apps.forms import RegisterForm
-from apps.models import Blog
-
-def shop_list_page(request):
-    context = {
-        'shop-list'
-    }
-    return  render(request, 'apps/blogs/shop-list.html', context)
-
-def blog_list_page(request):
-    context = {
-        'blogs': Blog.objects.all()
-    }
-    return render(request, 'apps/blogs/blog-list.html', context)
+from django.contrib.auth.views import LoginView
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView, DetailView, ListView, FormView
+from apps.forms import RegisterForm, EmailForm
+from apps.mixins import NotLoginRequiredMixin
+from apps.models import Blog, Category
+from django.shortcuts import redirect
+from django.shortcuts import render
+import qrcode
 
 
-def blog_detail_page(request):
-    context = {
-        'blogs': []
-    }
-    return render(request, 'apps/blogs/blog-detail.html', context)
+class BlogListView(ListView):
+    paginate_by = 5
+    template_name = 'apps/blogs/blog-list.html'
+    queryset = Blog.objects.order_by('-id')
+    context_object_name = 'blogs'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        if search := self.request.GET.get('search'):
+            return queryset.filter(name__icontains=search)
+        return queryset
 
 
-def index_page(request):
-    return render(request, 'apps/index.html')
+class BlogDetailView(DetailView):
+    queryset = Blog.objects.order_by('-created_at')
+    template_name = 'apps/blogs/blog-detail.html'
+    pk_url_kwarg = 'pk'
+    context_object_name = 'blog'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        context['recent_blogs'] = self.get_queryset()[:3]
+        return context
 
 
-def logout_page(request):
-    logout(request)
-    return redirect('index_page')
+class IndexView(TemplateView):
+    template_name = 'apps/index.html'
 
 
-def login_page(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if User.objects.filter(username=username).exists():
-            login(request, user)
-            return redirect('index_page')
-
-    return render(request, 'apps/login.html')
+class CustomLoginView(NotLoginRequiredMixin, LoginView):
+    template_name = 'apps/login.html'
+    next_page = 'index_page'
 
 
-def register_page(request):
-    form = RegisterForm()
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return redirect('index_page')
-    context = {
-        'form': form
-    }
-    return render(request, 'apps/login.html', context)
+class RegisterFormView(FormView):
+    template_name = 'apps/login.html'
+    form_class = RegisterForm
+    success_url = reverse_lazy('register_page')
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
+
+class Shoplistview(TemplateView):
+    template_name = 'apps/blogs/shop-list.html'
+
+
+class WishlistView(TemplateView):
+    template_name = 'apps/wishlist.html'
+
+
+class EmailView(FormView):
+    template_name = 'apps/index.html'
+    form_class = EmailForm
+    success_url = '.'
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        return redirect('.', self.get_context_data(form=form))
+
+
+class Shopping_card(FormView):
+    template_name = 'apps/shopping-card.html'
+
+
+
+

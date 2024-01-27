@@ -29,12 +29,9 @@
                         <div class="li-blog-sidebar pt-25">
                             <h4 class="li-blog-sidebar-title">Categories</h4>
                             <ul class="li-blog-archive">
-                                <li><a href="#">Laptops (10)</a></li>
-                                <li><a href="#">TV & Audio (08)</a></li>
-                                <li><a href="#">reach (07)</a></li>
-                                <li><a href="#">Smartphone (14)</a></li>
-                                <li><a href="#">Cameras (10)</a></li>
-                                <li><a href="#">Headphone (06)</a></li>
+                                {% for category in categories %}
+                                    <li><a href="#">{{ category.name }} ({{ category.count_blogs }})</a></li>
+                                {% endfor %}
                             </ul>
                         </div>
                         <div class="li-blog-sidebar">
@@ -50,42 +47,20 @@
                         </div>
                         <div class="li-blog-sidebar">
                             <h4 class="li-blog-sidebar-title">Recent Post</h4>
-                            <div class="li-recent-post pb-30">
-                                <div class="li-recent-post-thumb">
-                                    <a href="blog-details.html">
-                                        <img class="img-full" src="{% static 'apps/images/product/small-size/3.jpg' %}"
-                                             alt="Li's Product Image">
-                                    </a>
+
+                            {% for recent_blog in recent_blogs %}
+                                <div class="li-recent-post pb-30">
+                                    <div class="li-recent-post-thumb">
+                                        <a href="blog-details.html">
+                                            <img class="img-full" src="{{ recent_blog.image.url }}">
+                                        </a>
+                                    </div>
+                                    <div class="li-recent-post-des">
+                                        <span><a href="blog-details.html">{{ recent_blog.name }}</a></span>
+                                        <span class="li-post-date">{{ recent_blog.created_at|date:"d.m.Y" }}</span>
+                                    </div>
                                 </div>
-                                <div class="li-recent-post-des">
-                                    <span><a href="blog-details.html">First Blog Post</a></span>
-                                    <span class="li-post-date">25.11.2018</span>
-                                </div>
-                            </div>
-                            <div class="li-recent-post pb-30">
-                                <div class="li-recent-post-thumb">
-                                    <a href="blog-details.html">
-                                        <img class="img-full" src="{% static 'apps/images/product/small-size/2.jpg' %}"
-                                             alt="Li's Product Image">
-                                    </a>
-                                </div>
-                                <div class="li-recent-post-des">
-                                    <span><a href="blog-details.html">First Blog Post</a></span>
-                                    <span class="li-post-date">25.11.2018</span>
-                                </div>
-                            </div>
-                            <div class="li-recent-post pb-30">
-                                <div class="li-recent-post-thumb">
-                                    <a href="blog-details.html">
-                                        <img class="img-full" src="{% static 'apps/images/product/small-size/5.jpg' %}"
-                                             alt="Li's Product Image">
-                                    </a>
-                                </div>
-                                <div class="li-recent-post-des">
-                                    <span><a href="blog-details.html">First Blog Post</a></span>
-                                    <span class="li-post-date">25.11.2018</span>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                         <div class="li-blog-sidebar">
                             <h4 class="li-blog-sidebar-title">Tags</h4>
@@ -108,46 +83,28 @@
                             <div class="li-blog-single-item pb-30">
                                 <div class="li-blog-banner">
                                     <a href="blog-details.html"><img class="img-full"
-                                                                     src="{% static 'apps/images/blog-banner/bg-banner.jpg' %}" alt=""></a>
+                                                                     src="{% static 'apps/images/blog-banner/bg-banner.jpg' %}"
+                                                                     alt=""></a>
                                 </div>
                                 <div class="li-blog-content">
                                     <div class="li-blog-details">
-                                        <h3 class="li-blog-heading pt-25"><a href="#">The Biggest Collection For Digital
-                                            Product</a></h3>
+                                        <h3 class="li-blog-heading pt-25">
+                                            <a href="#">{{ blog.name }}</a>
+                                        </h3>
                                         <div class="li-blog-meta">
-                                            <a class="author" href="#"><i class="fa fa-user"></i>Admin</a>
-                                            <a class="comment" href="#"><i class="fa fa-comment-o"></i> 3 comment</a>
+                                            <a class="author" href="#"><i
+                                                    class="fa fa-user"></i>{{ blog.author.first_name }}</a>
+                                            <a class="comment" href="#"><i
+                                                    class="fa fa-comment-o"></i> {{ blog.count_comment }} comment</a>
                                             <a class="post-time" href="#"><i class="fa fa-calendar"></i> 25 nov 2018</a>
                                         </div>
-                                        <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
-                                            Aenean posuere libero eu augue condimentum rhoncus. Cras pretium arcu
-                                            ex.</p>
-                                        <!-- Begin Blog Blockquote Area -->
-                                        <div class="li-blog-blockquote">
-                                            <blockquote>
-                                                <p>Quisque semper nunc vitae erat pellentesque, ac placerat arcu
-                                                    consectetur. In venenatis elit ac ultrices convallis. Duis est nisi,
-                                                    tincidunt ac urna sed, cursus blandit lectus. In ullamcorper sit
-                                                    amet ligula ut eleifend. Proin dictum tempor ligula, ac feugiat
-                                                    metus. Sed finibus tortor eu scelerisque scelerisque.</p>
-                                            </blockquote>
-                                        </div>
-                                        <!-- Blog Blockquote Area End Here -->
-                                        <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex.
-                                            Aenean posuere libero eu augue condimentum rhoncus. Cras pretium arcu ex.
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum in
-                                            labore Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu
-                                            ex. Aenean posuere libero eu augue condimentum rhoncus. Cras pretium arcu
-                                            ex. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum laborum
-                                            in labore rerum Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras
-                                            pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Cras
-                                            pretium arcu ex. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Dolorum laborum in labore rerum </p>
+
+                                        {{ blog.text|safe }}
                                         <div class="li-tag-line">
                                             <h4>tag:</h4>
-                                            <a href="#">Headphones</a>,
-                                            <a href="#">Video Games</a>,
-                                            <a href="#">Wireless Speakers</a>
+                                            {% for tag in blog.tags.all %}
+                                                <a href="#">{{ tag.name }}</a>,
+                                            {% endfor %}
                                         </div>
                                         <div class="li-blog-sharing text-center pt-30">
                                             <h4>share this post:</h4>
@@ -161,50 +118,40 @@
                             </div>
                             <!-- Begin Li's Blog Comment Section -->
                             <div class="li-comment-section">
-                                <h3>03 comment</h3>
+                                <h3>{{ blog.count_comment }} comment</h3>
                                 <ul>
-                                    <li>
-                                        <div class="author-avatar pt-15">
-                                            <img src="{% static 'apps/images/product-details/user.png' %}" alt="User">
-                                        </div>
-                                        <div class="comment-body pl-15">
-                                            <span class="reply-btn pt-15 pt-xs-5"><a href="#">reply</a></span>
-                                            <h5 class="comment-author pt-15">admin</h5>
-                                            <div class="comment-post-date">
-                                                20 nov, 2018 at 9:30pm
+                                    {% for comment in blog.comment_set.all %}
+                                        <li>
+                                            <div class="author-avatar pt-15">
+                                                <img src="{{ comment.author.image.url }}" alt="User">
                                             </div>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores
-                                                adipisci optio ex, laboriosam facilis non pariatur itaque illo sunt?</p>
-                                        </div>
-                                    </li>
-                                    <li class="comment-children">
-                                        <div class="author-avatar pt-15">
-                                            <img src="{% static 'apps/images/product-details/admin.png' %}" alt="Admin">
-                                        </div>
-                                        <div class="comment-body pl-15">
-                                            <span class="reply-btn pt-15 pt-xs-5"><a href="#">reply</a></span>
-                                            <h5 class="comment-author pt-15">admin</h5>
-                                            <div class="comment-post-date">
-                                                20 nov, 2018 at 9:30pm
+                                            <div class="comment-body pl-15">
+                                                <span class="reply-btn pt-15 pt-xs-5"><a href="#">reply</a></span>
+                                                <h5 class="comment-author pt-15">{{ comment.author.first_name }}</h5>
+                                                <div class="comment-post-date">
+                                                    {#                                                    20 nov, 2018 at 9:30pm#}
+                                                    {{ comment.created_at|date:"d b, Y \a\t f a" }}
+                                                </div>
+                                                <p>{{ comment.text }}</p>
                                             </div>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores
-                                                adipisci optio ex, laboriosam facilis non pariatur itaque illo sunt?</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="author-avatar pt-15">
-                                            <img src="{% static 'apps/images/product-details/admin.png' %}" alt="Admin">
-                                        </div>
-                                        <div class="comment-body pl-15">
-                                            <span class="reply-btn pt-15 pt-xs-5"><a href="#">reply</a></span>
-                                            <h5 class="comment-author pt-15">admin</h5>
-                                            <div class="comment-post-date">
-                                                20 nov, 2018 at 9:30pm
-                                            </div>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores
-                                                adipisci optio ex, laboriosam facilis non pariatur itaque illo sunt?</p>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    {% endfor %}
+
+                                    {#                                    <li class="comment-children">#}
+                                    {#                                        <div class="author-avatar pt-15">#}
+                                    {#                                            <img src="{% static 'apps/images/product-details/admin.png' %}" alt="Admin">#}
+                                    {#                                        </div>#}
+                                    {#                                        <div class="comment-body pl-15">#}
+                                    {#                                            <span class="reply-btn pt-15 pt-xs-5"><a href="#">reply</a></span>#}
+                                    {#                                            <h5 class="comment-author pt-15">admin</h5>#}
+                                    {#                                            <div class="comment-post-date">#}
+                                    {#                                                20 nov, 2018 at 9:30pm#}
+                                    {#                                            </div>#}
+                                    {#                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim maiores#}
+                                    {#                                                adipisci optio ex, laboriosam facilis non pariatur itaque illo sunt?</p>#}
+                                    {#                                        </div>#}
+                                    {#                                    </li>#}
+
                                 </ul>
                             </div>
                             <!-- Li's Blog Comment Section End Here -->

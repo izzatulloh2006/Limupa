@@ -2,6 +2,8 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.forms import ModelForm, CharField, PasswordInput
+from django import forms
+from .models import Emails
 
 
 class RegisterForm(ModelForm):
@@ -17,3 +19,19 @@ class RegisterForm(ModelForm):
         if password != confirm_password:
             raise ValidationError("Password doesn't match")
         return make_password(password)
+
+
+class EmailForm(forms.ModelForm):
+    def clean_email(self):
+        email = self.data.get('email')
+        if Emails.objects.filter(email=email):
+            raise ValidationError('Email already exists !')
+        return email
+
+    class Meta:
+        model = Emails
+        fields = ('email',)
+
+
+
+

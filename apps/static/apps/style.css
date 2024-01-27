@@ -1,76 +1,7 @@
-/*-----------------------------------------------------------------------------------
-		Template Name: limupa - Digital Products Store ECommerce Bootstrap 4 Template
-		Template URI: http://bootexperts.com
-		Description: This is digital products store html5 template for eCommerce websites, nice and clean design;
-		Author: HasTech
-		Author URI: 
-		Version: 1.0
------------------------------------------------------------------------------------
-		CSS INDEX
-		===================
-		01. Default Style
-			1.1 Basic
-			1.2 Transition
-			1.3 Section Title
-			1.4 Default Button
-			1.5 Text Color
-			1.6 Input
-			1.8 Background Variation Set
-			1.9 Animation
-			1.10 All Navigation & Pagination
-			1.11 Owl Carousel Box Shadow
-			1.12 Li's Mobile Menu Customization 
-			1.13 Modal Area
-			1.14 Scroll Up
-		02. Home Page One
-			2.1 Header
-			2.2 Slider
-			2.3 Li's Static Top
-			2.4 Product-area css
-			2.5 Li's Banner
-			2.6 Li's Laptop Features
-			2.7 Li's Static Home Banner
-			2.8 Li's Trending Products
-				2.9 Footer
-		03. Home Page Two
-		04. Home Page Three
-		05. Home Page Four
-		06. Other Pages
-			6.1 Li's Shop Page
-			6.2 Li's Frequently Asked Question(FAQ)
-			6.3 Li's Wishlist Page
-			6.4 Li's Checkout Page
-			6.5 Li's Login Register
-			6.6 Li's Shopping Cart
-			6.7 Li's Blog Page
-			6.8 Li's Compare Page
-			6.9 Li's Contact Pages
-			6.10 Li's About Us Page
-			6.11 Li's Shop Page
-			6.12 Li's Single Product
-			6.13 Single Product Carousel Page
-			6.14 Single Product Sale Page
-			6.15 Single Product Group Page
-			6.16 Single Product Normal Page
-			6.17 Single Product Affiliate Page
-			6.18 Single Product Tab Style Left Page
-			6.19 Single Product Tab Style Right Page
-			6.20 Single Product Gallery Left Page
-			6.21 Error 404 Page
 
------------------------------------------------------------------------------------*/
 
-/* Google Fonts------------------
-	font-family: 'Poppins', sans-serif;
-	font-family: 'Rubik', sans-serif;
-*/
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i');
-/*----------------------------------------*/
-/*  01. Dfault Style
-/*----------------------------------------*/
-/*----------------------------------------*/
-/*  1.1 Basic
-/*----------------------------------------*/
+
 body {
 	color: #242424;
 	font-family: 'Rubik', sans-serif;
@@ -282,8 +213,8 @@ textarea {
 /*----------------------------------------*/
 /*  1.3 Section Title
 /*----------------------------------------*/
-.section-title > h3, 
-.section-title-2 > h3, 
+.section-title > h3,
+.section-title-2 > h3,
 .section-title-2 > p {
 	color: #ffffff;
 	font-family: roboto;
@@ -297,7 +228,7 @@ textarea {
 .section-title-2>h3 {
 	color: #222222
 }
-.section-title > p, 
+.section-title > p,
 .section-title-2 > p {
 	color: #ffffff;
 	font-style: italic;
@@ -331,8 +262,8 @@ button.li-btn:hover {
 	background: #333333;
 	color: #ffffff;
 }
-a.links, 
-a.links-2, 
+a.links,
+a.links-2,
 a.review-links {
 	background: #fed700 none repeat scroll 0 0;
 	color: #242424;
@@ -510,7 +441,7 @@ textarea:focus {
 	background-image: url(images/slider/12.jpg);
 }
 /*----------------------------------------*/
-/*  li's Background Variation Set 
+/*  li's Background Variation Set
 /*----------------------------------------*/
 .white-bg {
 	background: #fff;
@@ -655,8 +586,8 @@ textarea:focus {
 /*----------------------------------------*/
 /*  1.10 All Navigation & Pagination
 /*----------------------------------------*/
-.slider-active .owl-nav div, 
-.product-active .owl-nav div, 
+.slider-active .owl-nav div,
+.product-active .owl-nav div,
 .special-product-active .owl-nav div {
 	color: rgba(36,36,36,.15);
 	display: block;
@@ -671,7 +602,7 @@ textarea:focus {
 	transition: all 0.5s ease-in-out 0s;
 	z-index: 8;
 }
-.slider-active .owl-nav div:hover, 
+.slider-active .owl-nav div:hover,
 .product-active .owl-nav div:hover {
 	color: #fed700;
 }
@@ -689,7 +620,7 @@ textarea:focus {
 	left: auto;
 }
 .slider-active .owl-nav > .owl-prev > i,
-.product-active .owl-nav > .owl-prev > i, 
+.product-active .owl-nav > .owl-prev > i,
 .slider-active .owl-nav > .owl-next > i,
 .product-active .owl-nav > .owl-next > i {
 	font-size: 55px;
@@ -815,7 +746,7 @@ textarea:focus {
 	padding: 0 15px;
 }
 /*----------------------------------------*/
-/* 	1.12 Li's Mobile Menu Customization 
+/* 	1.12 Li's Mobile Menu Customization
 /*----------------------------------------*/
 .mobile-menu .mean-nav > ul {
 	overflow-y: auto;
@@ -830,7 +761,7 @@ textarea:focus {
      position: relative;
     /*---- Mean Nav ----*/
 }
-.mobile-menu-area .mobile-menu .mean-bar .meanmenu-reveal, 
+.mobile-menu-area .mobile-menu .mean-bar .meanmenu-reveal,
 .mobile-menu-area-4 .mobile-menu .mean-bar .meanmenu-reveal {
 	position: absolute;
 	top: -75px;
@@ -840,7 +771,7 @@ textarea:focus {
 .mobile-menu-area-4 .mobile-menu .mean-bar .meanmenu-reveal {
 	color: #ffffff;
 }
-.mobile-menu .mean-bar .meanmenu-reveal span, 
+.mobile-menu .mean-bar .meanmenu-reveal span,
 .mobile-menu-area-4 .mobile-menu .mean-bar .meanmenu-reveal span {
      position: relative;
     /*---- Menu Open ----*/
@@ -1063,7 +994,7 @@ textarea:focus {
   margin-right: 10px;
 }
 
-.product-details-images .lg-image img, 
+.product-details-images .lg-image img,
 .product-details-thumbs .sm-image img {
   width: 100%;
 }
@@ -1216,7 +1147,7 @@ textarea:focus {
   top: 0;
   right: 0;
 }
-.product-details-thumbs .slick-arrow, 
+.product-details-thumbs .slick-arrow,
 .tab-style-right .slick-arrow,
 .tab-style-left .slick-arrow {
   font-size: 20px;
@@ -1254,14 +1185,14 @@ textarea:focus {
   right: 10px;
   left: auto;
 }
-.tab-style-right .slick-arrow.slick-next, 
+.tab-style-right .slick-arrow.slick-next,
 .tab-style-left .slick-arrow.slick-next {
 	right: 40px;
 	left: auto;
 	bottom: 0;
 	top: auto;
 }
-.product-details-thumbs:hover .slick-arrow, 
+.product-details-thumbs:hover .slick-arrow,
 .tab-style-right:hover .slick-arrow,
 .tab-style-left:hover .slick-arrow {
   -webkit-transform: translateY(-50%);
@@ -1764,7 +1695,7 @@ textarea:focus {
 	font-weight: 500;
 	padding: 8px 0;
 }
-.hb-menu nav > ul > li:hover > a, 
+.hb-menu nav > ul > li:hover > a,
 .hb-menu nav > ul > li:hover > a::after {
 		color: #ffffff;
 }
@@ -1796,14 +1727,14 @@ textarea:focus {
 	transition: all 0.3s ease-in-out;
 }
 .ht-menu > li:hover .ht-currency-trigger span,
-.ht-menu > li:hover .ht-currency-trigger span::after, 
+.ht-menu > li:hover .ht-currency-trigger span::after,
 .ht-menu > li:hover .ht-language-trigger span,
 .ht-menu > li:hover .ht-language-trigger span::after {
 	color: #fed700;
 }
-.ht-menu > li .ht-setting-trigger span::after, 
-.ht-menu > li .ht-currency-trigger span::after, 
-.ht-menu > li .ht-language-trigger span::after, 
+.ht-menu > li .ht-setting-trigger span::after,
+.ht-menu > li .ht-currency-trigger span::after,
+.ht-menu > li .ht-language-trigger span::after,
 .hm-minicart-trigger .item-text::after {
 	content: "\f107";
 	font-size: 14px;
@@ -1813,9 +1744,9 @@ textarea:focus {
 }
 .hm-minicart-trigger .item-text::after {
 	color: #fff;
-} 
-.ht-menu > li .ht-setting-trigger.is-active span::after, 
-.ht-menu > li .ht-currency-trigger.is-active span::after, 
+}
+.ht-menu > li .ht-setting-trigger.is-active span::after,
+.ht-menu > li .ht-currency-trigger.is-active span::after,
 .ht-menu > li .ht-language-trigger.is-active span::after,
 .hm-minicart-trigger.is-active .item-text::after {
 	transform: rotate(-180deg);
@@ -1865,13 +1796,13 @@ textarea:focus {
 	font-size: 14px;
 	transition: all 0.3s ease-in-out;
 }
-.megamenu-static-holder ul li ul li.active a, 
+.megamenu-static-holder ul li ul li.active a,
 .dropdown-holder ul li ul li.active a {
 	color: #fed700;
 }
-.megamenu-holder .megamenu > li > a:hover, 
+.megamenu-holder .megamenu > li > a:hover,
 .megamenu-holder .megamenu li ul li a:hover,
-.megamenu-static-holder .megamenu > li > a:hover, 
+.megamenu-static-holder .megamenu > li > a:hover,
 .megamenu-static-holder .megamenu li ul li a:hover {
 	color: #fed700;
 }
@@ -2379,7 +2310,7 @@ textarea:focus {
 .add-actions-link li.add-cart.active a {
 	color: #242424;
 }
-.add-actions-link li:hover a, 
+.add-actions-link li:hover a,
 .add-actions-link li.add-cart:hover a {
 	color: #242424;
 }
@@ -2556,7 +2487,7 @@ textarea:focus {
 	overflow: hidden;
 	position: relative;
 }
-.li-banner > a::before, 
+.li-banner > a::before,
 .single-banner > a::before {
 	position: absolute;
 	content: "";
@@ -2750,7 +2681,7 @@ textarea:focus {
 	font-size: 14px;
 	cursor: pointer;
 }
-.li-product-menu > li > a span::before, 
+.li-product-menu > li > a span::before,
 .li-product-menu > li > a.active span::before {
 	bottom: -12px;
 }
@@ -2980,13 +2911,13 @@ text-align: center;
 	background: transparent;
 	border-bottom: 1px solid rgba(255,255,255,.1);
 }
-.li-header-4 .header-top-left > ul > li span, 
+.li-header-4 .header-top-left > ul > li span,
 .li-header-4 .header-top-left > ul > li a {
 	color: #fff;
 }
-.li-header-4 .ht-menu > li span, 
-.li-header-4 .ht-menu > li .ht-setting-trigger span::after, 
-.li-header-4 .ht-menu > li .ht-currency-trigger span::after, 
+.li-header-4 .ht-menu > li span,
+.li-header-4 .ht-menu > li .ht-setting-trigger span::after,
+.li-header-4 .ht-menu > li .ht-currency-trigger span::after,
 .li-header-4 .ht-menu > li .ht-language-trigger span::after {
 	color: #fff;
 }
@@ -2998,12 +2929,12 @@ text-align: center;
 	border-top: 1px solid rgba(255,255,255,.1);
 	color: #ffffff;
 }
-.li-header-4 .hb-menu nav > ul > li > a, 
+.li-header-4 .hb-menu nav > ul > li > a,
 .li-header-4 .hb-menu nav > ul > li > a:after {
 	color: #ffffff;
 	transition: all 0.3s ease-in-out;
 }
-.li-header-4 .hb-menu nav > ul > li:hover > a, 
+.li-header-4 .hb-menu nav > ul > li:hover > a,
 .li-header-4 .hb-menu nav > ul > li:hover > a::after {
 	color: #fed700;
 }
@@ -3089,7 +3020,7 @@ text-align: center;
 .header-bottom-area.header-style-3 .category-menu-list > ul > li:first-child{
 	border-top: 1px solid #ebebeb;
 }
-.category-menu-list > ul > li > a, 
+.category-menu-list > ul > li > a,
 .cat-dropdown > li > a {
 	display: block;
 	text-transform: capitalize;
@@ -3228,7 +3159,7 @@ li.right-menu .cat-mega-menu-2 > li {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     visibility: visible;
-} 
+}
 .header-top-search {
 	position: relative;
 }
@@ -3419,7 +3350,7 @@ li.right-menu .cat-mega-menu-2 > li {
 .shop-add-action .add-actions-link li.add-cart {
 	margin: 0 0 25px;;
 }
-.shop-add-action .add-actions-link li.wishlist, 
+.shop-add-action .add-actions-link li.wishlist,
 .shop-add-action .add-actions-link li:last-child {
 	display: block;
 	width: 100%;
@@ -4559,7 +4490,7 @@ h5.compare-product-name a:hover {
 /* 6.9 Li's Contact Page
 /*----------------------------------------*/
 #google-map {
-  height: 400px; 
+  height: 400px;
 }
 h3.contact-page-title {
   font-size: 32px;
@@ -4580,11 +4511,11 @@ h3.contact-page-title {
 	border-bottom: none;
 }
 span.required {
-  color: #ff0000; 
+  color: #ff0000;
 }
 /*----------  contact form  ----------*/
 .contact-form .form-group {
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 .contact-form label {
   display: block;
@@ -4601,7 +4532,7 @@ span.required {
   line-height: 50px;
   outline: none;
   border: 1px solid #e0e0e0;
-  padding-left: 20px; 
+  padding-left: 20px;
 }
 .contact-form textarea {
   background-color: #ffffff;
@@ -4610,7 +4541,7 @@ span.required {
   border: 1px solid #e0e0e0;
   padding-left: 20px;
   line-height: 50px;
-  height: 200px; 
+  height: 200px;
 }
 .contact-form .li-btn-3 {
   background: #f2f2f2;
@@ -4631,7 +4562,7 @@ span.required {
   background-color: #fed700;
   color: #ffffff;
   background-color: #fed700;
-  border-color: #fed700; 
+  border-color: #fed700;
 }
 .contact-page-side-content {
   background-color: #F2F2F2;
@@ -5210,7 +5141,7 @@ span.required {
 .feedback-btn {
 	position: relative;
 }
-.feedback-btn .close, 
+.feedback-btn .close,
 .feedback-btn a {
 	background: #242424;
 	color: #fff !important;
@@ -5431,6 +5362,3 @@ span.required {
 .small-version {
   display: none;
 }
-/*----------------------------------------------------------------------------------------------------*/
-/*------------------------------------------> The End <-----------------------------------------------*/
-/*----------------------------------------------------------------------------------------------------*/
